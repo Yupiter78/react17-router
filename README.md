@@ -16,15 +16,15 @@ This educational project is created to learn the basics of routing in React 17. 
 
 ## Additional Resources
 
-- [Official React Router Documentation](https://reactrouter.com/web/guides/quick-start)
-- [Medium Article on Routing in React](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
+-   [Official React Router Documentation](https://reactrouter.com/web/guides/quick-start)
+-   [Medium Article on Routing in React](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
 
 ## Author
 
 JS-Neo
 
 <hr/>
-
+<hr/>
 
 # Учебный проект: Изучение роутинга в React 17
 
@@ -44,8 +44,8 @@ JS-Neo
 
 ## Дополнительные ресурсы
 
-- [Официальная документация React Router](https://reactrouter.com/web/guides/quick-start)
-- [Статья на Medium о роутинге в React](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
+-   [Официальная документация React Router](https://reactrouter.com/web/guides/quick-start)
+-   [Статья на Medium о роутинге в React](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
 
 ## Автор
 
