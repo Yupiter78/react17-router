@@ -1,7 +1,31 @@
 import React from "react";
+import PropTypes from "prop-types";
+import Post from "./Post";
+import PostList from "./PostList";
 
-const Posts = () => {
-    return <h1>Posts</h1>;
+const Posts = ({
+    match: {
+        params: { postId }
+    }
+}) => {
+    const posts = [
+        { _id: 1, label: "Post 1" },
+        { _id: 2, label: "Post 2" },
+        { _id: 3, label: "Post 3" }
+    ];
+    return postId ? (
+        <Post id={postId} posts={posts} />
+    ) : (
+        <PostList {...{ posts }} />
+    );
+};
+
+Posts.propTypes = {
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            postId: PropTypes.string
+        })
+    })
 };
 
 export default Posts;
