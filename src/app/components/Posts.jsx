@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Post from "./Post";
 import PostList from "./PostList";
-import query from "query-string";
+import queryString from "query-string";
+import _ from "lodash";
 
 const Posts = ({
     match: {
@@ -15,10 +16,8 @@ const Posts = ({
         { _id: 2, label: "Post 2" },
         { _id: 3, label: "Post 3" }
     ];
-    const queryParse = query.parse(search);
-    const slicePosts = queryParse.count
-        ? posts.slice(0, queryParse.count)
-        : posts;
+    const { count } = queryString.parse(search);
+    const slicePosts = count ? _(posts).slice(0).take(count).value() : posts;
 
     return postId ? (
         <Post id={postId} posts={posts} />
