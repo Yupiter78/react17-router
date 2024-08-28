@@ -17,7 +17,9 @@ const Posts = ({
         { _id: 3, label: "Post 3" }
     ];
     const { count } = queryString.parse(search);
-    const slicePosts = count ? _(posts).slice(0).take(count).value() : posts;
+    const slicePosts = count
+        ? _(posts).slice(0).take(Number(count)).value()
+        : posts;
 
     return postId ? (
         <Post id={postId} posts={posts} />
