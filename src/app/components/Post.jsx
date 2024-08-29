@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
-const Post = ({ id, posts, history }) => {
+const Post = ({ id, posts }) => {
+    const history = useHistory();
     const post = posts.find(({ _id }) => _id.toString() === id);
     const handleSave = () => {
         if (history) {
@@ -25,8 +27,7 @@ Post.defaultProps = {
 
 Post.propTypes = {
     posts: PropTypes.array.isRequired,
-    id: PropTypes.string.isRequired,
-    history: PropTypes.object.isRequired
+    id: PropTypes.string.isRequired
 };
 
 export default Post;

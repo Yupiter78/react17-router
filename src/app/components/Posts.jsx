@@ -1,14 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Post from "./Post";
 import PostList from "./PostList";
+import { useParams } from "react-router-dom";
 
-const Posts = ({
-    match: {
-        params: { postId }
-    },
-    history
-}) => {
+const Posts = () => {
+    const { postId } = useParams();
     const posts = [
         { _id: 1, label: "Post 1" },
         { _id: 2, label: "Post 2" },
@@ -16,19 +12,12 @@ const Posts = ({
     ];
 
     return postId ? (
-        <Post id={postId} posts={posts} history={history} />
+        <Post id={postId} posts={posts} />
     ) : (
         <PostList posts={posts} />
     );
 };
 
-Posts.propTypes = {
-    match: PropTypes.shape({
-        params: PropTypes.shape({
-            postId: PropTypes.string
-        })
-    }),
-    history: PropTypes.object.isRequired
-};
+Posts.propTypes = {};
 
 export default Posts;
