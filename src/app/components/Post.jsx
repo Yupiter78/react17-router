@@ -13,7 +13,10 @@ const Post = ({ id, posts }) => {
     return post ? (
         <>
             <h2>{post.label}</h2>
-            <button onClick={handleSave}>Save</button>
+            <hr />
+            <button className="btn btn-primary" onClick={handleSave}>
+                Save
+            </button>
         </>
     ) : (
         <h2>{`Post with id: ${id} not found`}</h2>
