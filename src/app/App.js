@@ -10,7 +10,7 @@ import NotFound from "./components/NotFound";
 
 const App = () => {
     return (
-        <>
+        <div className="ms-5 mt-3">
             <NavBar />
             <h1>App</h1>
             <Switch>
@@ -23,7 +23,7 @@ const App = () => {
                 <Redirect from="/admin" to="/dashboard" />
                 <Redirect to="/404" />
             </Switch>
-        </>
+        </div>
     );
 };
 

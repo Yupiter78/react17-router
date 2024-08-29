@@ -1,18 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Post = ({ id, posts }) => {
+const Post = ({ id, posts, history }) => {
     const post = posts.find(({ _id }) => _id.toString() === id);
+    const handleSave = () => {
+        if (history) {
+            history.replace("/posts");
+        }
+    };
     return post ? (
-        <h2>{post.label}</h2>
+        <>
+            <h2>{post.label}</h2>
+            <button onClick={handleSave}>Save</button>
+        </>
     ) : (
         <h2>{`Post with id: ${id} not found`}</h2>
     );
 };
 
+Post.defaultProps = {
+    id: "",
+    posts: []
+};
+
 Post.propTypes = {
     posts: PropTypes.array.isRequired,
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 export default Post;
